@@ -1,0 +1,10 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity;
+@model Razor_IdentityDemo.Pages.Member.IndexModel
+@inject SignInManager<IdentityUser> signInManager
+
+<h1>Welcome @Model.Username</h1>
+
+@if(signInManager.IsSignedIn(User)) {
+	<em>User is signed in</em>
+}

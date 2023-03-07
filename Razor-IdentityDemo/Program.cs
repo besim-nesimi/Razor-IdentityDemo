@@ -4,6 +4,21 @@ using Razor_IdentityDemo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Kräver att man är inloggad för olika folders och sidor
+builder.Services.AddRazorPages(options => {
+	options.Conventions.AuthorizeFolder("/Member");
+	options.Conventions.AuthorizePage("/Privacy");
+
+});
+
+
+// Funkar ej? Why?
+builder.Services.ConfigureApplicationCookie(options =>
+{
+	options.LoginPath = "/Index";
+});
+
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 

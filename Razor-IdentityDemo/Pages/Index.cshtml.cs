@@ -1,18 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Razor_IdentityDemo.Pages
 {
+	[AllowAnonymous]
 	public class IndexModel : PageModel
 	{
-		private readonly ILogger<IndexModel> _logger;
+		private readonly SignInManager<IdentityUser> signInManager;
 
-		public IndexModel(ILogger<IndexModel> logger)
-		{
-			_logger = logger;
+		public IndexModel(SignInManager<IdentityUser> signInManager)
+        {
+			this.signInManager = signInManager;
 		}
 
-		public void OnGet()
+        public void OnGet()
 		{
 
 		}

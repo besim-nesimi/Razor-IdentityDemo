@@ -1,0 +1,17 @@
+﻿@page
+@model Razor_IdentityDemo.Pages.RegisterModel
+@{
+}
+
+<form method="post">
+	<label for="username-input">Username:</label>
+	<input id="username-input" type="text" placeholder="Username" asp-for="@Model.Username"/>
+	<label for="password-input">Password:</label>
+	<input id="password-input" type="password" placeholder="Password" asp-for="@Model.Password" />
+	<label for="verified-password-input">Verify Password:</label>
+	<input id="verified-password-input" type="password" placeholder="Verify Password" asp-for="@Model.VerifiedPassword"/>
+	<div>
+		<span class="text-danger" asp-validation-for="@Model.VerifiedPassword"></span>
+	</div>
+	<input type="submit" value="Register" />
+</form>
