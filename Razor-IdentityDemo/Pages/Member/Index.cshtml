@@ -5,6 +5,13 @@
 
 <h1>Welcome @Model.Username</h1>
 
-@if(signInManager.IsSignedIn(User)) {
-	<em>User is signed in</em>
+@if (signInManager.IsSignedIn(User))
+{
+    <em>User is signed in</em>
 }
+
+<form method="post">
+    <input type="submit" value="Sign out"/>
+</form>
+
+

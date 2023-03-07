@@ -6,5 +6,18 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+	<h3 class="text-success">Sign in yo self</h3>
+	<div>
+
+        <form method="post">
+            <input placeholder="Username" type="text" asp-for="@Model.Username" />
+            <input placeholder="Password" type="password" asp-for="@Model.Password" />
+            <input value="Sign in" type="submit" />
+        </form>
+	</div>
+	<div>
+		<h3 class="text-success">Register yo self</h3>
+        <a class="btn" asp-page="/Register">Register</a>
+    </div>
+
 </div>
